@@ -11,11 +11,12 @@ import AVFoundation
 import CoreMotion
 
 
-class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
+class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate, UIScrollViewDelegate {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var arrowImageView: UIImageView!
     @IBOutlet weak var segment: UISegmentedControl!
+    @IBOutlet weak var scrollView: UIScrollView!
 
     var mySession: AVCaptureSession!
     var myDevice: AVCaptureDevice!
@@ -24,11 +25,13 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     let detector = Detector()
     let motionManager: CMMotionManager = CMMotionManager()
 
+    private let pageCount = 3
     private var gestureMode: Int = 0
     private var isGestureEnabled: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupScrollView()
         
         if initCamera() {
             mySession.startRunning()
@@ -53,7 +56,25 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         // Dispose of any resources that can be recreated.
     }
     
-    func initCamera() -> Bool {
+    private func setupScrollView() {
+        for i in 0..<self.pageCount {
+            var x: CGFloat = self.view.bounds.width * CGFloat(i)
+            var y: CGFloat = 0
+            var width: CGFloat  = self.view.bounds.width
+            var height: CGFloat = self.view.bounds.height
+            var frame:CGRect = CGRect(x: x, y: y, width: width, height: height)
+            let imageView = UIImageView(frame: frame)
+            let image = UIImage(named: "menu\(i + 1)")
+            imageView.image = image
+            imageView.contentMode = UIViewContentMode.ScaleAspectFill
+            imageView.clipsToBounds = true
+            self.scrollView.addSubview(imageView)
+        }
+        self.scrollView.contentSize = CGSizeMake(self.view.bounds.width * CGFloat(self.pageCount), self.view.bounds.height)
+    }
+
+    
+    private func initCamera() -> Bool {
         mySession = AVCaptureSession()
         
         if UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Phone {
@@ -128,7 +149,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             image = self.detector.recognizeGesture(image, mode: self.gestureMode)
             
             // 表示
-            self.imageView.image = image
+//            self.imageView.image = image
             
             if !self.isGestureEnabled {
                 return
@@ -136,15 +157,32 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             
             var gestureType = Int(self.detector.getGestureType())
             if gestureType == 1 {
-                self.arrowImageView.image = UIImage(named: "arrowR.png")
-            } else {
-                self.arrowImageView.image = UIImage(named: "arrowL.png")
+                self.scrollBack()
+            } else if gestureType == 2 {
+                self.scrollNext()
             }
         })
+    }
+    
+    private func scrollNext() {
+        let currentPage: Int = Int(self.scrollView.contentOffset.x / self.scrollView.bounds.width)
+        let nextPage: Int = currentPage == self.pageCount - 1 ? self.pageCount - 1 : currentPage + 1
+        var frame: CGRect = self.scrollView.frame;
+        frame.origin.x = frame.size.width * CGFloat(nextPage)
+        frame.origin.y = 0;
+        self.scrollView.scrollRectToVisible(frame, animated: true)
+    }
+    
+    private func scrollBack() {
+        let currentPage: Int = Int(self.scrollView.contentOffset.x / self.scrollView.bounds.width)
+        let backPage: Int = currentPage == 0 ? 0 : currentPage - 1
+        var frame: CGRect = self.scrollView.frame;
+        frame.origin.x = frame.size.width * CGFloat(backPage)
+        frame.origin.y = 0;
+        self.scrollView.scrollRectToVisible(frame, animated: true)
     }
     
     @IBAction func segmentChanged(sender: UISegmentedControl) {
         self.gestureMode = sender.selectedSegmentIndex
     }
 }
-

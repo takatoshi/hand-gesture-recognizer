@@ -37,6 +37,8 @@ using namespace cv;
 }
 
 - (UIImage *)recognizeGesture:(UIImage *)image mode:(NSInteger)mode {
+    gestureType = GestureType::NONE;
+    
     // UIImage -> cv::Mat変換
     frame = [self cvMatFromUIImage:image];
     
@@ -124,7 +126,6 @@ using namespace cv;
             gestureEnabled = true;
         }
     }
-    
     
     // cv::Mat -> UIImage変換
     UIImage *resultImage = MatToUIImage(frame);

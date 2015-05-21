@@ -5,7 +5,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-enum GestureType {LEFT, RIGHT};
+enum GestureType {NONE, LEFT, RIGHT};
 
 @interface Detector: NSObject
 

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA04F4331B0DE7DD0027E0EC /* menu3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AA04F4301B0DE7DD0027E0EC /* menu3.jpeg */; };
+		AA04F4341B0DE7DD0027E0EC /* menu2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AA04F4311B0DE7DD0027E0EC /* menu2.jpeg */; };
+		AA04F4351B0DE7DD0027E0EC /* menu1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AA04F4321B0DE7DD0027E0EC /* menu1.jpeg */; };
 		BDA3D8E41B0D289200AB7CBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA3D8E31B0D289200AB7CBB /* AppDelegate.swift */; };
 		BDA3D8E61B0D289200AB7CBB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA3D8E51B0D289200AB7CBB /* ViewController.swift */; };
 		BDA3D8E91B0D289200AB7CBB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDA3D8E71B0D289200AB7CBB /* Main.storyboard */; };
@@ -34,6 +37,9 @@
 		0D26B90FC21B9A248FB88D87 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		1B26E56F865F42C58084E545 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B5B421C541A94E1BDB9B7CB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		AA04F4301B0DE7DD0027E0EC /* menu3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = menu3.jpeg; sourceTree = "<group>"; };
+		AA04F4311B0DE7DD0027E0EC /* menu2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = menu2.jpeg; sourceTree = "<group>"; };
+		AA04F4321B0DE7DD0027E0EC /* menu1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = menu1.jpeg; sourceTree = "<group>"; };
 		BDA3D8DE1B0D289200AB7CBB /* HandGestureRecognizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HandGestureRecognizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDA3D8E21B0D289200AB7CBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BDA3D8E31B0D289200AB7CBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +108,9 @@
 		BDA3D8E01B0D289200AB7CBB /* HandGestureRecognizer */ = {
 			isa = PBXGroup;
 			children = (
+				AA04F4301B0DE7DD0027E0EC /* menu3.jpeg */,
+				AA04F4311B0DE7DD0027E0EC /* menu2.jpeg */,
+				AA04F4321B0DE7DD0027E0EC /* menu1.jpeg */,
 				BDA3D9031B0D298000AB7CBB /* arrowL.png */,
 				BDA3D9041B0D298000AB7CBB /* arrowR.png */,
 				BDA3D8E31B0D289200AB7CBB /* AppDelegate.swift */,
@@ -234,7 +243,10 @@
 			files = (
 				BDA3D9051B0D298000AB7CBB /* arrowL.png in Resources */,
 				BDA3D9061B0D298000AB7CBB /* arrowR.png in Resources */,
+				AA04F4331B0DE7DD0027E0EC /* menu3.jpeg in Resources */,
 				BDA3D8E91B0D289200AB7CBB /* Main.storyboard in Resources */,
+				AA04F4351B0DE7DD0027E0EC /* menu1.jpeg in Resources */,
+				AA04F4341B0DE7DD0027E0EC /* menu2.jpeg in Resources */,
 				BDA3D8EE1B0D289200AB7CBB /* LaunchScreen.xib in Resources */,
 				BDA3D8EB1B0D289200AB7CBB /* Images.xcassets in Resources */,
 			);

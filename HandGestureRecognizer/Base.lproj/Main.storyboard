@@ -17,15 +17,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7TZ-Lr-9lC">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFu-i2-c6w">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowR.png" translatesAutoresizingMaskIntoConstraints="NO" id="7iR-US-Jbj">
-                                <rect key="frame" x="180" y="236" width="240" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="bQv-jY-H52"/>
-                                </constraints>
-                            </imageView>
+                            </scrollView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="OrD-DB-ASA">
                                 <rect key="frame" x="484" y="70" width="100" height="29"/>
                                 <constraints>
@@ -42,20 +36,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="7iR-US-Jbj" firstAttribute="centerX" secondItem="7TZ-Lr-9lC" secondAttribute="centerX" id="UzZ-OV-Zbb"/>
-                            <constraint firstItem="7iR-US-Jbj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="216" id="X3i-86-2VY"/>
-                            <constraint firstItem="7iR-US-Jbj" firstAttribute="centerY" secondItem="7TZ-Lr-9lC" secondAttribute="centerY" id="apm-k4-yJd"/>
-                            <constraint firstItem="7TZ-Lr-9lC" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="i9h-po-daj"/>
-                            <constraint firstAttribute="trailing" secondItem="7TZ-Lr-9lC" secondAttribute="trailing" id="iOA-92-z9T"/>
+                            <constraint firstAttribute="trailing" secondItem="dFu-i2-c6w" secondAttribute="trailing" id="50v-qb-SCa"/>
+                            <constraint firstItem="dFu-i2-c6w" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="HqV-l0-g1A"/>
+                            <constraint firstItem="dFu-i2-c6w" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="RI5-07-4vi"/>
+                            <constraint firstItem="dFu-i2-c6w" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="f2D-nb-DP3"/>
                             <constraint firstItem="OrD-DB-ASA" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="kJ3-jp-4ib"/>
                             <constraint firstItem="OrD-DB-ASA" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="lnN-FM-EyR"/>
-                            <constraint firstItem="7TZ-Lr-9lC" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="rzM-dI-obt"/>
-                            <constraint firstItem="7TZ-Lr-9lC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="tah-hE-Twr"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="arrowImageView" destination="7iR-US-Jbj" id="081-N0-YkQ"/>
-                        <outlet property="imageView" destination="7TZ-Lr-9lC" id="EfV-Sp-Dvc"/>
+                        <outlet property="scrollView" destination="dFu-i2-c6w" id="7uQ-87-o6M"/>
                         <outlet property="segment" destination="OrD-DB-ASA" id="EBA-BJ-kmW"/>
                     </connections>
                 </viewController>
@@ -63,7 +53,4 @@
             </objects>
         </scene>
     </scenes>
-    <resources>
-        <image name="arrowR.png" width="484" height="438"/>
-    </resources>
 </document>
