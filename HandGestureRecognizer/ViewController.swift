@@ -15,6 +15,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var arrowImageView: UIImageView!
+    @IBOutlet weak var segment: UISegmentedControl!
 
     var mySession: AVCaptureSession!
     var myDevice: AVCaptureDevice!
@@ -22,7 +23,8 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     
     let detector = Detector()
     let motionManager: CMMotionManager = CMMotionManager()
-    
+
+    private var gestureMode: Int = 0
     private var isGestureEnabled: Bool = true
     
     override func viewDidLoad() {
@@ -37,8 +39,9 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         motionManager.startDeviceMotionUpdatesToQueue( NSOperationQueue.currentQueue(), withHandler:{
             deviceManager, error in
             var accel: CMAcceleration = deviceManager.userAcceleration
-            if pow(accel.x, 2) + pow(accel.y, 2) + pow(accel.z, 2) > 1 / 1000 {
+            if pow(accel.x, 2) + pow(accel.y, 2) + pow(accel.z, 2) > 1 / 7000 {
                 self.isGestureEnabled = false
+                println("MOVE")
             } else {
                 self.isGestureEnabled = true
             }
@@ -101,11 +104,8 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         myOutput.setSampleBufferDelegate(self, queue: queue)
         
         for connection in myOutput.connections {
-            if let conn = connection as? AVCaptureConnection {
-                if conn.supportsVideoOrientation {
-                    conn.videoOrientation = CameraUtil.videoOrientationFromDeviceOrientation(UIDevice.currentDevice().orientation)
-                    
-                }
+            if let conn = connection as? AVCaptureConnection where conn.supportsVideoOrientation {
+                conn.videoOrientation = CameraUtil.videoOrientationFromDeviceOrientation(UIDevice.currentDevice().orientation)
             }
         }
         
@@ -113,7 +113,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         previewLayer.frame = self.view.bounds
         previewLayer.contentsGravity = kCAGravityResizeAspectFill
         previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
-        //        self.view.layer.insertSublayer(previewLayer, atIndex: 0)
+//        self.view.layer.insertSublayer(previewLayer, atIndex: 0)
         
         return true
     }
@@ -125,7 +125,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             var image: UIImage = CameraUtil.imageFromSampleBuffer(sampleBuffer)
             
             // ジェスチャー認識
-            image = self.detector.recognizeGesture(image)
+            image = self.detector.recognizeGesture(image, mode: self.gestureMode)
             
             // 表示
             self.imageView.image = image
@@ -141,6 +141,10 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
                 self.arrowImageView.image = UIImage(named: "arrowL.png")
             }
         })
+    }
+    
+    @IBAction func segmentChanged(sender: UISegmentedControl) {
+        self.gestureMode = sender.selectedSegmentIndex
     }
 }
 

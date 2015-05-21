@@ -31,8 +31,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D26B90FC21B9A248FB88D87 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		1B26E56F865F42C58084E545 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		2F3B72CA0F55455D91DFDD43 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		3B5B421C541A94E1BDB9B7CB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		BDA3D8DE1B0D289200AB7CBB /* HandGestureRecognizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HandGestureRecognizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDA3D8E21B0D289200AB7CBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BDA3D8E31B0D289200AB7CBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -69,14 +70,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		65CC6689FA30D21DC602782F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0D26B90FC21B9A248FB88D87 /* Pods.debug.xcconfig */,
+				3B5B421C541A94E1BDB9B7CB /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		BDA3D8D51B0D289200AB7CBB = {
 			isa = PBXGroup;
 			children = (
 				BDA3D8E01B0D289200AB7CBB /* HandGestureRecognizer */,
 				BDA3D8F61B0D289200AB7CBB /* HandGestureRecognizerTests */,
 				BDA3D8DF1B0D289200AB7CBB /* Products */,
-				2F3B72CA0F55455D91DFDD43 /* Pods.xcconfig */,
 				D332143AED6243ADBF8BD414 /* Frameworks */,
+				65CC6689FA30D21DC602782F /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -267,7 +277,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -407,7 +417,7 @@
 		};
 		BDA3D8FE1B0D289200AB7CBB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2F3B72CA0F55455D91DFDD43 /* Pods.xcconfig */;
+			baseConfigurationReference = 0D26B90FC21B9A248FB88D87 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -421,7 +431,7 @@
 		};
 		BDA3D8FF1B0D289200AB7CBB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2F3B72CA0F55455D91DFDD43 /* Pods.xcconfig */;
+			baseConfigurationReference = 3B5B421C541A94E1BDB9B7CB /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
