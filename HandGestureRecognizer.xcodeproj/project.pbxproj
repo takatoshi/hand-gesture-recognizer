@@ -1,0 +1,502 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BDA3D8E41B0D289200AB7CBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA3D8E31B0D289200AB7CBB /* AppDelegate.swift */; };
+		BDA3D8E61B0D289200AB7CBB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA3D8E51B0D289200AB7CBB /* ViewController.swift */; };
+		BDA3D8E91B0D289200AB7CBB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDA3D8E71B0D289200AB7CBB /* Main.storyboard */; };
+		BDA3D8EB1B0D289200AB7CBB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDA3D8EA1B0D289200AB7CBB /* Images.xcassets */; };
+		BDA3D8EE1B0D289200AB7CBB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDA3D8EC1B0D289200AB7CBB /* LaunchScreen.xib */; };
+		BDA3D8FA1B0D289200AB7CBB /* HandGestureRecognizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA3D8F91B0D289200AB7CBB /* HandGestureRecognizerTests.swift */; };
+		BDA3D9051B0D298000AB7CBB /* arrowL.png in Resources */ = {isa = PBXBuildFile; fileRef = BDA3D9031B0D298000AB7CBB /* arrowL.png */; };
+		BDA3D9061B0D298000AB7CBB /* arrowR.png in Resources */ = {isa = PBXBuildFile; fileRef = BDA3D9041B0D298000AB7CBB /* arrowR.png */; };
+		BDA3D9081B0D2B6500AB7CBB /* CameraUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA3D9071B0D2B6500AB7CBB /* CameraUtil.swift */; };
+		BDA3D90B1B0D2BCA00AB7CBB /* Detector.mm in Sources */ = {isa = PBXBuildFile; fileRef = BDA3D90A1B0D2BCA00AB7CBB /* Detector.mm */; };
+		F815B515C0C241F7846B9B4D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B26E56F865F42C58084E545 /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BDA3D8F41B0D289200AB7CBB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BDA3D8D61B0D289200AB7CBB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BDA3D8DD1B0D289200AB7CBB;
+			remoteInfo = HandGestureRecognizer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1B26E56F865F42C58084E545 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F3B72CA0F55455D91DFDD43 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		BDA3D8DE1B0D289200AB7CBB /* HandGestureRecognizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HandGestureRecognizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDA3D8E21B0D289200AB7CBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BDA3D8E31B0D289200AB7CBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BDA3D8E51B0D289200AB7CBB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BDA3D8E81B0D289200AB7CBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BDA3D8EA1B0D289200AB7CBB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BDA3D8ED1B0D289200AB7CBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		BDA3D8F31B0D289200AB7CBB /* HandGestureRecognizerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HandGestureRecognizerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDA3D8F81B0D289200AB7CBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BDA3D8F91B0D289200AB7CBB /* HandGestureRecognizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandGestureRecognizerTests.swift; sourceTree = "<group>"; };
+		BDA3D9031B0D298000AB7CBB /* arrowL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowL.png; sourceTree = "<group>"; };
+		BDA3D9041B0D298000AB7CBB /* arrowR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowR.png; sourceTree = "<group>"; };
+		BDA3D9071B0D2B6500AB7CBB /* CameraUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraUtil.swift; sourceTree = "<group>"; };
+		BDA3D9091B0D2BCA00AB7CBB /* HandGestureRecognizer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HandGestureRecognizer-Bridging-Header.h"; sourceTree = "<group>"; };
+		BDA3D90A1B0D2BCA00AB7CBB /* Detector.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Detector.mm; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BDA3D8DB1B0D289200AB7CBB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F815B515C0C241F7846B9B4D /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BDA3D8F01B0D289200AB7CBB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BDA3D8D51B0D289200AB7CBB = {
+			isa = PBXGroup;
+			children = (
+				BDA3D8E01B0D289200AB7CBB /* HandGestureRecognizer */,
+				BDA3D8F61B0D289200AB7CBB /* HandGestureRecognizerTests */,
+				BDA3D8DF1B0D289200AB7CBB /* Products */,
+				2F3B72CA0F55455D91DFDD43 /* Pods.xcconfig */,
+				D332143AED6243ADBF8BD414 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		BDA3D8DF1B0D289200AB7CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BDA3D8DE1B0D289200AB7CBB /* HandGestureRecognizer.app */,
+				BDA3D8F31B0D289200AB7CBB /* HandGestureRecognizerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BDA3D8E01B0D289200AB7CBB /* HandGestureRecognizer */ = {
+			isa = PBXGroup;
+			children = (
+				BDA3D9031B0D298000AB7CBB /* arrowL.png */,
+				BDA3D9041B0D298000AB7CBB /* arrowR.png */,
+				BDA3D8E31B0D289200AB7CBB /* AppDelegate.swift */,
+				BDA3D8E51B0D289200AB7CBB /* ViewController.swift */,
+				BDA3D8E71B0D289200AB7CBB /* Main.storyboard */,
+				BDA3D8EA1B0D289200AB7CBB /* Images.xcassets */,
+				BDA3D8EC1B0D289200AB7CBB /* LaunchScreen.xib */,
+				BDA3D8E11B0D289200AB7CBB /* Supporting Files */,
+				BDA3D9071B0D2B6500AB7CBB /* CameraUtil.swift */,
+				BDA3D90A1B0D2BCA00AB7CBB /* Detector.mm */,
+				BDA3D9091B0D2BCA00AB7CBB /* HandGestureRecognizer-Bridging-Header.h */,
+			);
+			path = HandGestureRecognizer;
+			sourceTree = "<group>";
+		};
+		BDA3D8E11B0D289200AB7CBB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BDA3D8E21B0D289200AB7CBB /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BDA3D8F61B0D289200AB7CBB /* HandGestureRecognizerTests */ = {
+			isa = PBXGroup;
+			children = (
+				BDA3D8F91B0D289200AB7CBB /* HandGestureRecognizerTests.swift */,
+				BDA3D8F71B0D289200AB7CBB /* Supporting Files */,
+			);
+			path = HandGestureRecognizerTests;
+			sourceTree = "<group>";
+		};
+		BDA3D8F71B0D289200AB7CBB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BDA3D8F81B0D289200AB7CBB /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D332143AED6243ADBF8BD414 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1B26E56F865F42C58084E545 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BDA3D8DD1B0D289200AB7CBB /* HandGestureRecognizer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BDA3D8FD1B0D289200AB7CBB /* Build configuration list for PBXNativeTarget "HandGestureRecognizer" */;
+			buildPhases = (
+				65275061CD7A4F00B4793DC1 /* Check Pods Manifest.lock */,
+				BDA3D8DA1B0D289200AB7CBB /* Sources */,
+				BDA3D8DB1B0D289200AB7CBB /* Frameworks */,
+				BDA3D8DC1B0D289200AB7CBB /* Resources */,
+				A5D7CB591E14413991B545D9 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HandGestureRecognizer;
+			productName = HandGestureRecognizer;
+			productReference = BDA3D8DE1B0D289200AB7CBB /* HandGestureRecognizer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BDA3D8F21B0D289200AB7CBB /* HandGestureRecognizerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BDA3D9001B0D289200AB7CBB /* Build configuration list for PBXNativeTarget "HandGestureRecognizerTests" */;
+			buildPhases = (
+				BDA3D8EF1B0D289200AB7CBB /* Sources */,
+				BDA3D8F01B0D289200AB7CBB /* Frameworks */,
+				BDA3D8F11B0D289200AB7CBB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BDA3D8F51B0D289200AB7CBB /* PBXTargetDependency */,
+			);
+			name = HandGestureRecognizerTests;
+			productName = HandGestureRecognizerTests;
+			productReference = BDA3D8F31B0D289200AB7CBB /* HandGestureRecognizerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BDA3D8D61B0D289200AB7CBB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Takatoshi Kobayashi";
+				TargetAttributes = {
+					BDA3D8DD1B0D289200AB7CBB = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+					BDA3D8F21B0D289200AB7CBB = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = BDA3D8DD1B0D289200AB7CBB;
+					};
+				};
+			};
+			buildConfigurationList = BDA3D8D91B0D289200AB7CBB /* Build configuration list for PBXProject "HandGestureRecognizer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BDA3D8D51B0D289200AB7CBB;
+			productRefGroup = BDA3D8DF1B0D289200AB7CBB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BDA3D8DD1B0D289200AB7CBB /* HandGestureRecognizer */,
+				BDA3D8F21B0D289200AB7CBB /* HandGestureRecognizerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BDA3D8DC1B0D289200AB7CBB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDA3D9051B0D298000AB7CBB /* arrowL.png in Resources */,
+				BDA3D9061B0D298000AB7CBB /* arrowR.png in Resources */,
+				BDA3D8E91B0D289200AB7CBB /* Main.storyboard in Resources */,
+				BDA3D8EE1B0D289200AB7CBB /* LaunchScreen.xib in Resources */,
+				BDA3D8EB1B0D289200AB7CBB /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BDA3D8F11B0D289200AB7CBB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		65275061CD7A4F00B4793DC1 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A5D7CB591E14413991B545D9 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BDA3D8DA1B0D289200AB7CBB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDA3D9081B0D2B6500AB7CBB /* CameraUtil.swift in Sources */,
+				BDA3D8E61B0D289200AB7CBB /* ViewController.swift in Sources */,
+				BDA3D8E41B0D289200AB7CBB /* AppDelegate.swift in Sources */,
+				BDA3D90B1B0D2BCA00AB7CBB /* Detector.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BDA3D8EF1B0D289200AB7CBB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDA3D8FA1B0D289200AB7CBB /* HandGestureRecognizerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BDA3D8F51B0D289200AB7CBB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BDA3D8DD1B0D289200AB7CBB /* HandGestureRecognizer */;
+			targetProxy = BDA3D8F41B0D289200AB7CBB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BDA3D8E71B0D289200AB7CBB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BDA3D8E81B0D289200AB7CBB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BDA3D8EC1B0D289200AB7CBB /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BDA3D8ED1B0D289200AB7CBB /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BDA3D8FB1B0D289200AB7CBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BDA3D8FC1B0D289200AB7CBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BDA3D8FE1B0D289200AB7CBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F3B72CA0F55455D91DFDD43 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = HandGestureRecognizer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HandGestureRecognizer/HandGestureRecognizer-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BDA3D8FF1B0D289200AB7CBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F3B72CA0F55455D91DFDD43 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = HandGestureRecognizer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HandGestureRecognizer/HandGestureRecognizer-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		BDA3D9011B0D289200AB7CBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HandGestureRecognizerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HandGestureRecognizer.app/HandGestureRecognizer";
+			};
+			name = Debug;
+		};
+		BDA3D9021B0D289200AB7CBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HandGestureRecognizerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HandGestureRecognizer.app/HandGestureRecognizer";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BDA3D8D91B0D289200AB7CBB /* Build configuration list for PBXProject "HandGestureRecognizer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BDA3D8FB1B0D289200AB7CBB /* Debug */,
+				BDA3D8FC1B0D289200AB7CBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BDA3D8FD1B0D289200AB7CBB /* Build configuration list for PBXNativeTarget "HandGestureRecognizer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BDA3D8FE1B0D289200AB7CBB /* Debug */,
+				BDA3D8FF1B0D289200AB7CBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BDA3D9001B0D289200AB7CBB /* Build configuration list for PBXNativeTarget "HandGestureRecognizerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BDA3D9011B0D289200AB7CBB /* Debug */,
+				BDA3D9021B0D289200AB7CBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BDA3D8D61B0D289200AB7CBB /* Project object */;
+}
