@@ -5,12 +5,16 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-enum GestureType {NONE, LEFT, RIGHT};
+typedef NS_ENUM(NSInteger, GestureType) {
+    GestureTypeNone,
+    GestureTypeLeft,
+    GestureTypeRight
+};
 
 @interface Detector: NSObject
 
 - (id)init;
-- (UIImage *)recognizeGesture:(UIImage *)image mode:(NSInteger)mode;
-- (int)getGestureType;
+- (UIImage *)detectGesture:(UIImage *)image mode:(NSInteger)mode;
+- (GestureType)getGestureType;
 
 @end

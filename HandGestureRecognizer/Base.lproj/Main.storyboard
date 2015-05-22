@@ -17,9 +17,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFu-i2-c6w">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFu-i2-c6w">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="y00-vx-vWC"/>
+                                </connections>
                             </scrollView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="j7k-BO-Pzo">
+                                <rect key="frame" x="510" y="440" width="90" height="160"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="sHH-4F-4XJ"/>
+                                    <constraint firstAttribute="height" constant="160" id="tOb-ow-hdn"/>
+                                </constraints>
+                            </imageView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="OrD-DB-ASA">
                                 <rect key="frame" x="484" y="70" width="100" height="29"/>
                                 <constraints>
@@ -36,8 +46,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="j7k-BO-Pzo" secondAttribute="trailing" constant="-16" id="14G-aJ-gv5"/>
                             <constraint firstAttribute="trailing" secondItem="dFu-i2-c6w" secondAttribute="trailing" id="50v-qb-SCa"/>
                             <constraint firstItem="dFu-i2-c6w" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="HqV-l0-g1A"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="j7k-BO-Pzo" secondAttribute="bottom" id="RHy-DE-y8F"/>
                             <constraint firstItem="dFu-i2-c6w" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="RI5-07-4vi"/>
                             <constraint firstItem="dFu-i2-c6w" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="f2D-nb-DP3"/>
                             <constraint firstItem="OrD-DB-ASA" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="kJ3-jp-4ib"/>
@@ -45,6 +57,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="j7k-BO-Pzo" id="tqd-O0-eSn"/>
                         <outlet property="scrollView" destination="dFu-i2-c6w" id="7uQ-87-o6M"/>
                         <outlet property="segment" destination="OrD-DB-ASA" id="EBA-BJ-kmW"/>
                     </connections>

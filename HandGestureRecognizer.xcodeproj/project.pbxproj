@@ -18,7 +18,7 @@
 		BDA3D8FA1B0D289200AB7CBB /* HandGestureRecognizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA3D8F91B0D289200AB7CBB /* HandGestureRecognizerTests.swift */; };
 		BDA3D9051B0D298000AB7CBB /* arrowL.png in Resources */ = {isa = PBXBuildFile; fileRef = BDA3D9031B0D298000AB7CBB /* arrowL.png */; };
 		BDA3D9061B0D298000AB7CBB /* arrowR.png in Resources */ = {isa = PBXBuildFile; fileRef = BDA3D9041B0D298000AB7CBB /* arrowR.png */; };
-		BDA3D9081B0D2B6500AB7CBB /* CameraUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA3D9071B0D2B6500AB7CBB /* CameraUtil.swift */; };
+		BDA3D9081B0D2B6500AB7CBB /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA3D9071B0D2B6500AB7CBB /* CameraManager.swift */; };
 		BDA3D90B1B0D2BCA00AB7CBB /* Detector.mm in Sources */ = {isa = PBXBuildFile; fileRef = BDA3D90A1B0D2BCA00AB7CBB /* Detector.mm */; };
 		F815B515C0C241F7846B9B4D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B26E56F865F42C58084E545 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -52,7 +52,7 @@
 		BDA3D8F91B0D289200AB7CBB /* HandGestureRecognizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandGestureRecognizerTests.swift; sourceTree = "<group>"; };
 		BDA3D9031B0D298000AB7CBB /* arrowL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowL.png; sourceTree = "<group>"; };
 		BDA3D9041B0D298000AB7CBB /* arrowR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowR.png; sourceTree = "<group>"; };
-		BDA3D9071B0D2B6500AB7CBB /* CameraUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraUtil.swift; sourceTree = "<group>"; };
+		BDA3D9071B0D2B6500AB7CBB /* CameraManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
 		BDA3D9091B0D2BCA00AB7CBB /* HandGestureRecognizer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HandGestureRecognizer-Bridging-Header.h"; sourceTree = "<group>"; };
 		BDA3D90A1B0D2BCA00AB7CBB /* Detector.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Detector.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,7 +119,7 @@
 				BDA3D8EA1B0D289200AB7CBB /* Images.xcassets */,
 				BDA3D8EC1B0D289200AB7CBB /* LaunchScreen.xib */,
 				BDA3D8E11B0D289200AB7CBB /* Supporting Files */,
-				BDA3D9071B0D2B6500AB7CBB /* CameraUtil.swift */,
+				BDA3D9071B0D2B6500AB7CBB /* CameraManager.swift */,
 				BDA3D90A1B0D2BCA00AB7CBB /* Detector.mm */,
 				BDA3D9091B0D2BCA00AB7CBB /* HandGestureRecognizer-Bridging-Header.h */,
 			);
@@ -299,7 +299,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BDA3D9081B0D2B6500AB7CBB /* CameraUtil.swift in Sources */,
+				BDA3D9081B0D2B6500AB7CBB /* CameraManager.swift in Sources */,
 				BDA3D8E61B0D289200AB7CBB /* ViewController.swift in Sources */,
 				BDA3D8E41B0D289200AB7CBB /* AppDelegate.swift in Sources */,
 				BDA3D90B1B0D2BCA00AB7CBB /* Detector.mm in Sources */,

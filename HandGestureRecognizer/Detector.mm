@@ -31,13 +31,13 @@ using namespace cv;
     self = [super init];
     
     bgs = new BackgroundSubtractorMOG2(0, 0, false);
-    gestureType = GestureType::RIGHT;
+    gestureType = GestureTypeNone;
     
     return self;
 }
 
-- (UIImage *)recognizeGesture:(UIImage *)image mode:(NSInteger)mode {
-    gestureType = GestureType::NONE;
+- (UIImage *)detectGesture:(UIImage *)image mode:(NSInteger)mode {
+    gestureType = GestureTypeNone;
     
     // UIImage -> cv::Mat変換
     frame = [self cvMatFromUIImage:image];
@@ -65,39 +65,13 @@ using namespace cv;
             points.push_back(contour.at(0));
         }
         
-        if (points.size() > 10) {
+        if (points.size() > 3) {
             cv::Rect brect = cv::boundingRect(cv::Mat(points).reshape(2));
             cv::rectangle(frame, brect.tl(), brect.br(), cv::Scalar(0, 255, 0), 5, CV_AA);
             currCenter.x = brect.tl().x + (brect.br().x - brect.tl().x) / 2;
             currCenter.y = brect.tl().y + (brect.br().y - brect.tl().y) / 2;
         }
         
-        if (abs(currCenter.x - prevCenter.x) > 100 && prevCenter.x != 0 && currCenter.x != 0) {
-            double dx = currCenter.x - prevCenter.x;
-            double dy = currCenter.y - prevCenter.y;
-            double angle = atan2(dy, dx) * 180 / M_PI;
-            prevCenter = cv::Point(0, 0);
-            NSLog(@"x=%d, y=%d", currCenter.x, currCenter.y);
-            NSLog(@"angle=%f", angle);
-            
-            if (angle > -90.0 && angle < 90.0) {
-                gestureType = GestureType::LEFT;
-            } else if ((angle > 90.0 && angle < 180.0) || (angle > -180.0 && angle < -90.0)) {
-                gestureType = GestureType::RIGHT;
-            }
-        }
-        
-        // 初期座標更新
-        if (prevCenter.x == 0 && currCenter.x != 0) {
-            prevCenter = currCenter;
-            delta = 0;
-        }
-        
-        // 一定時間経過後リセット
-        if (++delta > 20.0) {
-            prevCenter = cv::Point(0, 0);
-            delta = 0;
-        }
     } else if (mode == 1) {
         // 重心計算
         IplImage binImg = bin;
@@ -109,22 +83,41 @@ using namespace cv;
         if (currCenter.x != 0) {
             cv::circle(frame, currCenter, 50, cv::Scalar(255, 0, 0), 3, 8, 0);
         }
+    }
+    
+    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+    if (abs(currCenter.x - prevCenter.x) > screenSize.width / 2 && prevCenter.x != 0 && currCenter.x != 0 && gestureEnabled) {
+        double dx = currCenter.x - prevCenter.x;
+        double dy = currCenter.y - prevCenter.y;
+        double angle = atan2(dy, dx) * 180 / M_PI;
+        prevCenter = cv::Point(0, 0);
+        gestureEnabled = false;
+        NSLog(@"x=%d, y=%d", currCenter.x, currCenter.y);
+        NSLog(@"angle=%f", angle);
         
-        CGSize screenSize = [[UIScreen mainScreen] bounds].size;
-        
-        if (currCenter.x != 0 && gestureEnabled) {
-            if (currCenter.x > screenSize.width / 2) {
-                gestureType = GestureType::RIGHT;
-            } else {
-                gestureType = GestureType::LEFT;
-            }
-            gestureEnabled = false;
+        if (angle > -90.0 && angle < 90.0) {
+            gestureType = GestureTypeLeft;
+        } else if ((angle > 90.0 && angle < 180.0) || (angle > -180.0 && angle < -90.0)) {
+            gestureType = GestureTypeRight;
         }
-        
-        // 移動物体が検出されなくなったらリセット
-        if (currCenter.x == 0) {
-            gestureEnabled = true;
-        }
+    }
+    
+    // 初期座標更新
+    if (prevCenter.x == 0 && currCenter.x != 0) {
+        prevCenter = currCenter;
+        delta = 0;
+    }
+    
+    // 一定時間経過後リセット
+    if (++delta > 5.0) {
+        prevCenter = cv::Point(0, 0);
+        delta = 0;
+        gestureEnabled = true;
+    }
+    
+    if (!gestureEnabled) {
+        cv::Rect brect = cv::Rect(0, 0, frame.cols, frame.rows);
+        cv::rectangle(frame, brect.tl(), brect.br(), cv::Scalar(255, 0, 0), 30, CV_AA);
     }
     
     // cv::Mat -> UIImage変換
