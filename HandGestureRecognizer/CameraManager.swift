@@ -65,12 +65,8 @@ class CameraManager {
         
         let queue: dispatch_queue_t = dispatch_queue_create("myqueue", DISPATCH_QUEUE_SERIAL)
         myOutput.setSampleBufferDelegate(sampleBufferDelegate, queue: queue)
-        
-        for connection in myOutput.connections {
-            if let conn = connection as? AVCaptureConnection where conn.supportsVideoOrientation {
-                conn.videoOrientation = self.videoOrientationFromDeviceOrientation(UIDevice.currentDevice().orientation)
-            }
-        }
+                
+        self.setVideoOrientation()
         
         mySession.startRunning()
     }
@@ -109,23 +105,27 @@ class CameraManager {
         return resultImage
     }
     
-    private func videoOrientationFromDeviceOrientation(deviceOrientation: UIDeviceOrientation) -> AVCaptureVideoOrientation {
+    func setVideoOrientation(interfaceOrientation: UIInterfaceOrientation = UIApplication.sharedApplication().statusBarOrientation) {
+        for connection in myOutput.connections {
+            if let conn = connection as? AVCaptureConnection where conn.supportsVideoOrientation {
+                conn.videoOrientation = self.videoOrientationFromDeviceOrientation(interfaceOrientation)
+            }
+        }
+    }
+    
+    private func videoOrientationFromDeviceOrientation(interfaceOrientation: UIInterfaceOrientation) -> AVCaptureVideoOrientation {
         let orientation: AVCaptureVideoOrientation
-        switch (deviceOrientation) {
-        case UIDeviceOrientation.Unknown:
+        switch (interfaceOrientation) {
+        case .Unknown:
             orientation = AVCaptureVideoOrientation.Portrait
-        case UIDeviceOrientation.Portrait:
+        case .Portrait:
             orientation = AVCaptureVideoOrientation.Portrait
-        case UIDeviceOrientation.PortraitUpsideDown:
+        case .PortraitUpsideDown:
             orientation = AVCaptureVideoOrientation.PortraitUpsideDown
-        case UIDeviceOrientation.LandscapeLeft:
-            orientation = AVCaptureVideoOrientation.LandscapeRight
-        case UIDeviceOrientation.LandscapeRight:
+        case .LandscapeLeft:
             orientation = AVCaptureVideoOrientation.LandscapeLeft
-        case UIDeviceOrientation.FaceUp:
-            orientation = AVCaptureVideoOrientation.Portrait
-        case UIDeviceOrientation.FaceDown:
-            orientation = AVCaptureVideoOrientation.Portrait
+        case .LandscapeRight:
+            orientation = AVCaptureVideoOrientation.LandscapeRight
         }
         
         return orientation

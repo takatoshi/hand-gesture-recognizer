@@ -27,6 +27,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     let cameraManager: CameraManager = CameraManager()
 
     private let pageCount = 3
+    private var currentPage = 0
     private var gestureMode: Int = 0
     private var frameCount: Int = 0
     private var isScrolling: Bool = false
@@ -49,12 +50,24 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         })
     }
     
+    override func viewWillLayoutSubviews() {
+        self.currentPage = Int(self.scrollView.contentOffset.x / self.scrollView.bounds.width)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        cameraManager.setVideoOrientation()
+        setupScrollView()
+        scrollToPage(self.currentPage)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     private func setupScrollView() {
+        self.scrollView.subviews.map { $0.removeFromSuperview() }
         for i in 0..<self.pageCount {
             let x: CGFloat = self.view.bounds.width * CGFloat(i)
             let y: CGFloat = 0
@@ -104,16 +117,19 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     private func scrollNext() {
         let currentPage: Int = Int(self.scrollView.contentOffset.x / self.scrollView.bounds.width)
         let nextPage: Int = currentPage == self.pageCount - 1 ? self.pageCount - 1 : currentPage + 1
-        let frame: CGRect = self.scrollView.frame;
-        let offset: CGPoint = CGPoint(x: frame.size.width * CGFloat(nextPage), y: 0)
-        self.scrollView.setContentOffset(offset, animated: true)
+        scrollToPage(nextPage)
     }
     
     private func scrollBack() {
         let currentPage: Int = Int(self.scrollView.contentOffset.x / self.scrollView.bounds.width)
         let backPage: Int = currentPage == 0 ? 0 : currentPage - 1
+        scrollToPage(backPage)
+    }
+    
+    private func scrollToPage(pageNum: Int) {
+        self.currentPage = pageNum
         let frame: CGRect = self.scrollView.frame;
-        let offset: CGPoint = CGPoint(x: frame.size.width * CGFloat(backPage), y: 0)
+        let offset: CGPoint = CGPoint(x: frame.size.width * CGFloat(pageNum), y: 0)
         self.scrollView.setContentOffset(offset, animated: true)
     }
     
