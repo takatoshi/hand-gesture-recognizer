@@ -17,10 +17,6 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     @IBOutlet weak var arrowImageView: UIImageView!
     @IBOutlet weak var segment: UISegmentedControl!
     @IBOutlet weak var scrollView: UIScrollView!
-
-    var mySession: AVCaptureSession!
-    var myDevice: AVCaptureDevice!
-    var myOutput: AVCaptureVideoDataOutput!
     
     let detector = Detector()
     let motionManager: CMMotionManager = CMMotionManager()
@@ -50,6 +46,12 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         })
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        UIDevice.currentDevice().proximityMonitoringEnabled = true
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "proximitySensorStateDidChange:", name: UIDeviceProximityStateDidChangeNotification, object: nil)
+    }
+    
     override func viewWillLayoutSubviews() {
         self.currentPage = Int(self.scrollView.contentOffset.x / self.scrollView.bounds.width)
     }
@@ -59,6 +61,8 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         cameraManager.setVideoOrientation()
         setupScrollView()
         scrollToPage(self.currentPage)
+//        [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIDeviceOrientationPortrait] forKey:@"orientation"];
+        UIDevice.currentDevice().setValue(UIDeviceOrientation.Portrait.rawValue, forKey: "orientation")
     }
     
     override func didReceiveMemoryWarning() {
@@ -97,7 +101,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             var image: UIImage = self.cameraManager.imageFromSampleBuffer(sampleBuffer)
             
             // ジェスチャー認識
-            image = self.detector.detectGesture(image, mode: self.gestureMode)
+//            image = self.detector.detectGesture(image, mode: self.gestureMode)
             
             // 表示
             self.imageView.image = image
@@ -145,10 +149,17 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         self.isGestureEnabled = true
         self.isScrolling = false
+        UIDevice.currentDevice().proximityMonitoringEnabled = true
     }
     
     func scrollViewDidEndScrollingAnimation(scrollView: UIScrollView) {
         self.isGestureEnabled = true
         self.isScrolling = false
+        UIDevice.currentDevice().proximityMonitoringEnabled = true
+    }
+    
+    func proximitySensorStateDidChange(notification:NSNotification) {
+        UIDevice.currentDevice().proximityMonitoringEnabled = false
+        scrollNext()
     }
 }
